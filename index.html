@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="meuDiv">Javascript</div>
+    <script>
+        const meuDiv = document.getElementById('meuDiv');
+        meuDiv.textContent = 'texto javascript'
+
+        meuDiv.style.fontSize = '40px';
+        meuDiv.style.color = 'yellow';
+        meuDiv.style.backgroundColor = 'orange';
+        meuDiv.style.padding = '10px';
+        meuDiv.style.borderRadius = '5px';
+    </script>
+    <p id="meuParagrafo">Este é um parágrafo que será modificado.</p>
+
+    <script>
+
+      const paragrafo = document.getElementById('meuParagrafo');
+      
+      paragrafo.textContent = 'Texto alterado com JavaScript!';
+      
+      paragrafo.style.backgroundColor = 'yellow';
+    </script>
+    <img id="jsimg" src="Unofficial_JavaScript_logo_2.svg.png" alt="img">
+    <script>
+        const imagem = document.getElementById('jsimg');
+
+        imagem.setAttribute('title', 'Imagem dinâmica');
+    </script>
+    <button id="meuBotao">Alterar conteúdo div</button>
+
+    <script>
+      
+      const botao = document.getElementById('meuBotao');
+      
+      botao.addEventListener('click', function() {
+        meuDiv.textContent = 'O conteúdo do div foi alterado após o clique!';
+        meuDiv.style.backgroundColor = 'blue';
+      });
+    </script>
+    <input type="text" id="meuInput" placeholder="Pressione Enter">
+
+    <script>
+      const input = document.getElementById('meuInput');
+      
+      input.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+          console.log('A tecla Enter foi pressionada!');
+        }
+      });
+    </script>
+    <ul id="minhaLista"></ul>
+    <button id="adicionarItem">Adicionar Item</button>
+    
+    <script>
+      const lista = document.getElementById('minhaLista');
+      const botaoAdicionar = document.getElementById('adicionarItem');
+      
+      botaoAdicionar.addEventListener('click', function() {
+        const novoItem = document.createElement('li');
+        novoItem.textContent = 'Novo Item';
+        
+        const botaoRemover = document.createElement('button');
+        botaoRemover.textContent = 'Remover';
+        botaoRemover.style.marginLeft = '10px';
+        
+        botaoRemover.addEventListener('click', function() {
+          lista.removeChild(novoItem);
+        });
+        
+        novoItem.appendChild(botaoRemover);
+        lista.appendChild(novoItem);
+      });
+    </script>
+</body>
+</html>
